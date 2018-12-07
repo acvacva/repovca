@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <meta charset="UTF-8" />
+   <body>
+       
+       <nav th:fragment="header">   
+      
+      <ul>
+      
+    <li><a title="Inicio" href="/comentarios">Inicio</a></li>
+    <li><a title="Ver Productos" href="/products">Ver Productos</a></li>
+    <li><a title="Más Comentados" href="/mascomentados">Más Comentados</a></li>
+    <li><a title="Mejor valorados" href="/masvalorado">Mejor Valorados</a></li>
+    <li><a title="Añadir producto" href="/product/new">Añadir Producto</a></li>
+    <li><a title="Login" href="/login">Inicia sesión</a></li>
+    <li><a title="Registrarme" href="/registration">Regístrate para comentar</a></li>
+    
+    
+</ul>
+
+
+Conectado: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b>	
+
+ 
+   
+ </nav>  
+ 
+      <form th:action="@{/logout}" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> 
+    <input type="submit" value="Desconecta" />
+    </form>
+   </body>
+    
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Welcome</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   
+   <body>
+  <!-- cabeza --> 
+   
+   <header>
+   <div id="logo"></div>
+   
+   <div id="icono1"></div>
+   <div id="icono2"></div>
+   <div id="icono3"></div>
+   
+   
+   </header>
+   
+   
+   
+  <!-- Barr navegacion -->
+       
+      <nav th:fragment="menu">
+        <ul>
+      
+            <li><a title="Inicio" href="/index">Inicio</a></li>
+            <li><a title="Ver Productos" href="/products">Ver Productos</a></li>
+            <li><a title="Ver Comentarios" href="/comentarios">Ver Comentarios</a></li>
+            <li><a title="Login" href="/login">Login</a></li>
+            <li><a title="Registrarme" href="/registration">Registrarme</a></li>
+    
+       </ul>
+      </nav>
+      
+      
+      <!-- caja principal top -->
+      
+      <div id="top">
+           <ul>
+           
+           <li> </li>
+           <li> </li>
+           <li> </li>
+      
+            
+           </ul>
+            
+      </div>
+      
+      
+      <!-- seccion -->
+      
+     <section>
+     
+     <aside id="izq"></aside>
+     
+     <article></article>
+     <aside id="izq"></aside>
+     
+     
+     </section> 
+      
+    <footer></footer>  
+       
+   </body>
+    
+</html>

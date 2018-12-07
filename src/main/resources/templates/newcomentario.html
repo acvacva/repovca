@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>NuevoComentario</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+      <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet"/> 
+   </head>
+   <body>
+   
+   <!-- cabeza --> 
+   
+   <header>
+    <div th:replace="fragmheader :: header" ></div>
+   
+   </header>
+   
+   
+   
+  <!-- Barra de navegacion -->
+       
+      <nav>
+      
+     
+      
+        <ul>
+      
+           <a title="Inicio" href="/comentarios"><li class="botones">Inicio</li></a>
+           <a title="Ver Productos" href="/products"> <li class="botones">Ver Productos</li></a>
+           <a title="Más Comentados" href="/mascomentados"><li class="botones">Más Comentados</li></a>
+           <a title="Mejor valorados" href="/masvalorado"> <li class="botones">Mejor valorados</li></a>
+           <a title="Añadir producto" href="/product/new"><li class="botones">Añadir producto</li></a>
+    
+       </ul>
+     
+       
+      </nav>
+      
+      
+      <!-- caja principal top -->
+      
+      <div id="top">
+           <ul>
+           
+            <li>
+           <h1></h1>
+           <p></p>
+           </li>
+           
+           <li> 
+            <h1></h1>
+           <p></p>
+           </li>
+           
+           
+           <li>
+            <h1></h1>
+           <p></p>
+            </li>
+      
+            
+           </ul>
+            
+      </div>
+      
+      
+      <!-- seccion -->
+      
+     <section>
+     
+     <aside id="izq"></aside>
+     
+     <article>
+     
+     <h1>Nuevo Comentario de </h1>
+       
+      <p th:text = "${product.nombreproducto}"></p>
+      
+ <form th:action="@{/products/editcomentario/{id}(id=${product.idproducto})}" th:object="${comentario}" method="POST">
+ 
+     <input type="hidden" th:field="*{idcomentario}" />
+     
+     <p><textarea th:field="*{descripcion}" th:placeholder="Comenta" required="required"></textarea></p>
+         
+     <p>Comprar otra vez:</p> 
+            
+     <p><label>Si</label> <input type="radio"  value="1"  th:field="*{compraragain}"/> 
+     <label>No</label> <input type="radio"  value="0"  th:field="*{compraragain}"/></p> 
+          
+
+         
+         
+         <p>Que puntuación le da:  </p>       
+       <p><label>1</label> <input type="radio"  value="1"  th:field="*{raiting}"/>
+        <label>2</label> <input type="radio"  value="2"  th:field="*{raiting}" /> 
+        <label>3</label> <input type="radio"  value="3"  th:field="*{raiting}"/>
+        <label>4</label> <input type="radio"  value="4"  th:field="*{raiting}" /> 
+       <label>5</label> <input type="radio"  value="5"  th:field="*{raiting}"/></p>  
+        
+     
+         
+ 
+         <input type="submit" value="NuevoComentario" />
+      </form>
+     
+     </article>
+     <aside id="der">
+     
+     
+     </aside>
+     
+     </section> 
+      
+    <footer>
+    
+    <div th:replace="fragmfooter :: footer" ></div>
+    
+    </footer> 
+   
+    
+       
+   </body>
+</html>

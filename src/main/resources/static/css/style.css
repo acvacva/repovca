@@ -1,0 +1,251 @@
+@charset "ISO-8859-1";
+
+
+
+/*formatear valores que vienen por defecto*/
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-family:sans-serif;
+	
+}
+
+header{
+	
+	position:relative;
+	margin:auto;
+	width:1000px;
+	height:120px;
+    /*background:#444;*/
+	
+}
+
+#logo{
+	
+	position:absolute;
+	top:30px;
+	left:30px;
+	margin:auto;
+	width:266px;
+	height:66px;
+/*	background:#ccc;*/
+	font-family: 'Alex Brush', cursive;
+	font-size:50px;
+
+	
+}
+
+.redes{
+	
+	position:absolute;
+	width:142px;
+	height:42px;
+	background:#ccc;
+	border-radius:100%;
+	font-family: 'Alex Brush', cursive;
+	font-size:13px;
+	text-align:center;
+	line-height:42px
+}
+
+#icono1{
+	
+	top:42px;
+	right:420px;
+}
+
+#icono2{
+	
+	top:42px;
+	right:271px;
+}
+
+#icono3{
+	
+	top:42px;
+	right:119px;
+}
+
+
+
+nav{
+	position:relative;
+	margin:auto;
+	width:1000px;
+	height:48px;
+	background:#aaa;
+	
+	
+}
+/*el float pone el menu en horizotal*/
+.botones{
+		
+	float:left;
+	width:196px;
+	margin:0px 2px;
+	height:48px;
+	background:#ccc;
+	font-family: 'Alex Brush', cursive;
+	font-size:25px;
+	text-align:center;
+	line-height:48px
+	
+}
+
+a .botones:hover{
+	
+	background:rgba(100,0,255,.4);
+}
+
+
+#top{
+	
+	position:relative;
+	margin:20px auto;
+	width:1000px;
+	height:10px;
+/*	height:100px;
+/*	background:#888;*/
+
+}
+
+#top ul {
+	
+	width:1010px;
+	height:10px;
+	
+}
+
+	/*el float pone el menu en horizotal*/
+#top ul li{
+	
+
+	float:left;
+	width:326px;
+	height:10px;
+/*	background:#333;*/
+	
+}
+
+
+
+section{
+	
+	position:relative;
+	margin:auto;
+	width:1200px;
+	height:453px;
+/*	background:#aaa; */
+
+}
+
+aside#izq{
+	
+	position:absolute;
+	left:0;
+	top:0;
+	width:200px;
+	height:453px;
+/*	background:#333; */
+	
+}
+
+aside#izq div{
+	
+	
+	margin:30px;
+		
+}
+
+
+
+aside#der{
+	
+	position:absolute;
+	right:0;
+	top:0;
+	width:0;
+	height:453px;
+/*	background:#333; */
+	
+}
+
+article{
+	
+	position:absolute;
+	left:200px;
+	top:0;
+	width:800px;
+	height:453px;
+	
+	
+}
+
+article h1{
+	
+	width:600px;
+	height:50px;
+	line-height:50px;
+	text-align:left;
+	margin-bottom:5px;	
+}
+
+article input{
+	
+	padding:10px;
+	margin:5px 0;
+	width:176px;
+}
+
+article input[type="radio"]{
+	
+	
+	width:10px;
+}
+
+article select{
+	
+	padding:10px;
+	margin:5px 0;
+	width:200px;
+}
+
+
+
+article form p{
+	
+	margin:5px;
+	
+}
+
+article form p input[type="submite"]{
+	
+	margin:0;
+	padding:0;
+	
+}
+
+.tablaestilo{
+	
+	width:100%;
+	text-align:center;
+	
+	
+}
+
+
+
+
+footer {
+    position:relative;
+	margin:20px auto;
+	width:1000px;
+	height:76px;
+	text-align:center;
+	line-height:76px;
+	background:#888;
+}
+
+
+

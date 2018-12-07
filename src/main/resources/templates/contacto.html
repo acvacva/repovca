@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Add Person</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+      <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet"/> 
+   </head>
+   <body>
+   
+   <!-- cabeza --> 
+   
+   <header>
+    <div th:replace="fragmheader :: header" ></div>
+   
+   </header>
+   
+   
+   
+  <!-- Barra de navegacion -->
+       
+      <nav>
+      
+     
+      
+        <ul>
+      
+           <a title="Inicio" href="/comentarios"><li class="botones">Inicio</li></a>
+           <a title="Ver Productos" href="/products"> <li class="botones">Ver Productos</li></a>
+           <a title="Más Comentados" href="/mascomentados"><li class="botones">Más Comentados</li></a>
+           <a title="Mejor valorados" href="/masvalorado"> <li class="botones">Mejor valorados</li></a>
+           <a title="Añadir producto" href="/product/new"><li class="botones">Añadir producto</li></a>
+    
+       </ul>
+     
+       
+      </nav>
+      
+      
+      <!-- caja principal top -->
+      
+      <div id="top">
+           <ul>
+           
+            <li>
+           <h1></h1>
+           <p></p>
+           </li>
+           
+           <li> 
+            <h1></h1>
+           <p></p>
+           </li>
+           
+           
+           <li>
+            <h1></h1>
+           <p></p>
+            </li>
+      
+            
+           </ul>
+            
+      </div>
+      
+      
+      <!-- seccion -->
+      
+     <section>
+     
+     <aside id="izq"></aside>
+     
+     <article>
+     
+     <h1>Contacto</h1>
+    
+    Puede establecer contacto mediante el siguiente correo
+     
+     
+     </article>
+     <aside id="der">
+     
+     
+     </aside>
+     
+     
+     </section> 
+      
+    <footer>
+    
+    <div th:replace="fragmfooter :: footer" ></div>
+    
+    </footer> 
+   
+      
+   
+     
+        
+          
+      
+       
+   </body>
+</html>

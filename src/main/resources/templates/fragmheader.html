@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <meta charset="UTF-8" />
+   <body>
+       
+       <div th:fragment="header">   
+      
+      <div id="logo">VoteForBeauty</div>
+   
+   <div id="icono1" class="redes"><a title="Login" href="/login">Login</a></div>
+   <div id="icono2" class="redes"><a title="Registrarme" href="/registration">Registrarme</a></div>
+   <div id="icono3" class="redes"><a title="Contacto" href="/contacto">Contacto</a></div>
+   
+
+<!--  Conectado: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b>-->	
+<span th:if="${#httpServletRequest.remoteUser}" th:text="${#httpServletRequest.remoteUser}"></span>
+
+
+
+    </div>
+   </body>
+    
+</html>

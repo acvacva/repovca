@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Add Person</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+      <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet"/> 
+   </head>
+   <body>
+   
+   <!-- cabeza --> 
+   
+   <header>
+   <div id="logo">VoteForBeauty</div>
+   
+   <div id="icono1" class="redes"><a title="Login" href="/login">Login</a></div>
+   <div id="icono2" class="redes"><a title="Registrarme" href="/registration">Registrarme</a></div>
+   <div id="icono3" class="redes"><a title="Contacto" href="/registration">Contacto</a></div>
+   
+   
+   </header>
+   
+   
+   
+  <!-- Barr navegacion -->
+       
+      <nav>
+        <ul>
+      
+           <a title="Inicio" href="/comentarios"><li class="botones">Inicio</li></a>
+           <a title="Ver Productos" href="/products"> <li class="botones">Ver Productos</li></a>
+           <a title="Más Comentados" href="/mascomentados"><li class="botones">Más Comentados</li></a>
+           <a title="Mejor valorados" href="/masvalorado"> <li class="botones">Mejor valorados</li></a>
+           <a title="Añadir producto" href="/product/new"><li class="botones">Añadir producto</li></a>
+    
+       </ul>
+      </nav>
+      
+      
+      <!-- caja principal top -->
+      
+      <div id="top">
+           <ul>
+           
+           <li>
+           <h1></h1>
+           <p></p>
+           </li>
+           
+           <li> 
+            <h1></h1>
+           <p></p>
+           </li>
+           
+           
+           <li>
+            <h1></h1>
+           <p></p>
+            </li>
+      
+            
+           </ul>
+            
+      </div>
+      
+      
+      <!-- seccion -->
+      
+     <section>
+     
+     <aside id="izq"></aside>
+     
+     <article>
+     
+     <h1>Añade un nuevo producto</h1>
+     
+     <form th:action="@{/product/new}" th:object="${product}" method="POST">
+        
+       <input type="hidden" th:field="*{idproducto}" />
+<!--        <input type="text"    th:field="*{nombreproducto}" th:placeholder="nombre" required="required"/>   -->
+         <input type="text"    th:field="*{nombreproducto}" th:placeholder="nombre" />  
+                  
+            
+                   
+                    
+                     <div>
+                     
+                <select th:field="*{marca}" required="required">
+                         <option value=""> -- </option>
+                         
+                         <option th:each="m : ${listmarcas}"
+                       
+                            th:value="${m.nombremarca}"
+                            th:utext="${m.nombremarca}"/>
+                            
+                         
+                            
+                  </select>
+                   
+                    </div>
+                                     
+            <div>
+         
+                 
+                    
+                   <select th:field="*{categoria}" required="required">
+                         <option value=""> -- </option>
+                         <option th:each="c : ${listcategorias}"
+                            th:value="${c.nombrecategoria}"
+                            th:utext="${c.nombrecategoria}"/>
+                  </select> 
+                    
+              </div> 
+                    
+         <input type="submit" value="Nuevo Producto" />
+      </form>
+     
+   
+     
+     
+     </article>
+     <aside id="der">
+     
+     
+     </aside>
+     
+     
+     </section> 
+      
+    <footer>
+    
+    <div th:replace="fragmfooter :: footer" ></div>
+    
+    </footer> 
+   
+      
+   
+     
+        
+          
+      
+       
+   </body>
+</html>

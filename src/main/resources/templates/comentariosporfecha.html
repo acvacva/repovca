@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Welcome</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      
+    	<div th:replace="fragmheader :: header" >
+    </div> 
+    <h1>Ultimos Comentarios</h1>     
+          
+   <div>
+         <table border="1">
+            <tr>
+               <th>idcomentario</th>
+               <th>comentario</th>
+               <th>fecha</th>
+               <th>producto</th>
+              
+            </tr>
+            <tr th:each ="coments : ${coments}">
+               <td th:utext="${coments.idcomentario}">...</td>
+               <td th:utext="${coments.descripcion}">...</td>
+               <td th:utext="${coments.fecha}">...</td>
+               <td th:utext="${coments.producto.nombreproducto}">...</td>
+                
+            </tr>
+         </table>
+      </div>
+       
+   </body>
+    
+</html>
