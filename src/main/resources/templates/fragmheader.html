@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <meta charset="UTF-8" />
-   <body>
-       
-       <div th:fragment="header">   
-      
-      <div id="logo">VoteForBeauty</div>
-   
-   <div id="icono1" class="redes"><a title="Login" href="/login">Login</a></div>
-   <div id="icono2" class="redes"><a title="Registrarme" href="/registration">Registrarme</a></div>
-   <div id="icono3" class="redes"><a title="Contacto" href="/contacto">Contacto</a></div>
-   
+  
 
-<!--  Conectado: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b>-->	
-<span th:if="${#httpServletRequest.remoteUser}" th:text="${#httpServletRequest.remoteUser}"></span>
+  
+<body>
+
+	<div th:fragment="header">
 
 
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 
-    </div>
-   </body>
-    
+			<!-- Brand -->
+			<a class="navbar-brand" href="#">VoteForBeauty</a>
+
+			<!-- Links -->
+
+
+			<ul class="navbar-nav">
+
+				<li class="nav-item"><a class="nav-link" href="/comentarios">Inicio</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/products">Ver
+						productos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/products">Añadir
+						comentario</a></li>
+				<li class="nav-item"><a class="nav-link" href="/mascomentados">Más
+						comentados</a></li>
+				<li class="nav-item"><a class="nav-link" href="/masvalorado">Más
+						valorados</a></li>
+				<li class="nav-item"><a class="nav-link" href="/product/new">Añadir
+						producto</a></li>
+
+
+
+				<li class="nav-item"><a class="nav-link" href="/login">Login</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/registration">Registrarme</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a>
+				</li>
+
+			</ul>
+
+			<!-- Navbar text-->
+			<!--   <span class="navbar-text"> -->
+			<!--     Navbar text -->
+			<!--   </span> -->
+
+		</nav>
+
+
+
+		<!--  Conectado: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b>-->
+		<span th:if="${#httpServletRequest.remoteUser}"
+			th:text="${#httpServletRequest.remoteUser}"></span>
+
+
+
+	</div>
+</body>
+
 </html>
