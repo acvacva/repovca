@@ -1,89 +1,95 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-   <head>
-<meta charset="UTF-8" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-<title>Comentarios</title>
-<!-- <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /> -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Alex+Brush" -->
-<!-- 	rel="stylesheet" /> -->
 
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-</link>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
-     
-     
-     
-     
-   
-   </head>
-   <body>
-<!--   <div class="container-fluid">  -->
-<div class="container"> 
-   
-   <header>
     <div th:replace="fragmheader :: header" ></div>
    
-   </header>
-   
-    
 
-     
-     <h2>Ãšltimos comentarios</h2>
-  <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>            
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        
-         <th>Comentario</th>
-         <th>Producto</th>
-         <th>ValoraciÃ³n</th>
-         <th>Fecha</th>
-        
-      </tr>
-    </thead>
-    <tbody>
+<body>
+<!--   <div class="container-fluid">  -->
 
-      
-      <tr th:each ="coments : ${coments}">
-              
-               <td  th:utext="${coments.descripcion}">...</td>     
-               <td th:utext="${coments.producto.nombreproducto}">...</td>
-               <td th:utext="${coments.raiting}">...</td>
-                <td th:utext="${#dates.format(coments.fecha,'dd-MMM-yyyy')}"></td>
-            
-          
-                
-            </tr>
-      
-      
-    </tbody>
-  </table>
-   
 
-    <footer>
-    
-    <div th:replace="fragmfooter :: footer" ></div>
-    
-    </footer> 
+ <div th:replace="fragmheader :: nav" ></div>
    
-      
-   
-     
-        
-          
-    </div>  
-       
-   </body>
+<div class="container-fluid">
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2>Los últimos comentarios</h2>
+   <h6> <span th:if="${#httpServletRequest.remoteUser}"
+		th:text="${#httpServletRequest.remoteUser}"></span></h6>
+
+
+  </div>
+</div>
+ 
+
+
+
+		<div th:each="coments : ${coments}">
+			<div class="card bg-light text-dark">
+				<div class="card-body">
+					<h4 class="card-title"
+						th:utext="${coments.producto.nombreproducto}"></h4>
+
+					<p class="card-text" th:utext="${coments.descripcion}"></p>
+					<!--   <p class="card-text" th:text="#{valoracion}"  th:utext="${coments.raiting}"></p> -->
+
+					<span class="time-right"
+						th:utext="${#dates.format(coments.fecha,'dd-MMM-yyyy')}"></span>
+
+					<div class="card-footer" th:text="#{valoracion}"
+						th:utext="${coments.raiting}"></div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+		<!--   <table class="table table-hover"> -->
+			<!--     <thead> -->
+			<!--       <tr> -->
+
+			<!--          <th>Comentario</th> -->
+			<!--          <th>Producto</th> -->
+			<!--          <th>Valoración</th> -->
+			<!--          <th>Fecha</th> -->
+
+			<!--       </tr> -->
+			<!--     </thead> -->
+			<!--     <tbody> -->
+
+
+			<!--       <tr th:each ="coments : ${coments}"> -->
+
+			<!--                <td  th:utext="${coments.descripcion}">...</td>      -->
+			<!--                <td th:utext="${coments.producto.nombreproducto}">...</td> -->
+			<!--                <td th:utext="${coments.raiting}">...</td> -->
+			<!--                 <td th:utext="${#dates.format(coments.fecha,'dd-MMM-yyyy')}"></td> -->
+
+
+
+			<!--             </tr> -->
+
+
+			<!--     </tbody> -->
+			<!--   </table> -->
+
+
+			<footer>
+
+				<div th:replace="fragmfooter :: footer"></div>
+
+			</footer>
+
+
+
+
+
+
+		</div>
+		</body>
 </html>

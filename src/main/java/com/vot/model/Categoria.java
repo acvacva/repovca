@@ -77,6 +77,15 @@ public class Categoria implements Serializable {
 	}
 	
 	
+	public Categoria(int idcategoria, List<Producto> productos) {
+		super();
+		this.idcategoria = idcategoria;
+		this.productos = productos;
+	}
+	
+	
+	
+	
 	public int getIdcategoria() {
 		return idcategoria;
 	}

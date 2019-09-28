@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -189,7 +190,7 @@ public class ProductController {
 	
 	/*crear un nuevo producto*/
 	@RequestMapping(value="/product/new",method=RequestMethod.POST)
-	public String saveProduct(Producto product,Model model) {
+	public String saveProduct(@ModelAttribute("product") Producto product,Model model) {
 	
 		
 		productservice.saveProduct(product);

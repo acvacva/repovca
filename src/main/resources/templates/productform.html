@@ -91,8 +91,7 @@
                          <option th:each="m : ${listmarcas}"
                        
                             th:value="${m.nombremarca}"
-                            th:utext="${m.nombremarca}"/>
-                            
+                            th:utext="${m.nombremarca}"/>                         
                          
                             
                   </select>
@@ -100,15 +99,20 @@
                     </div>
                                      
             <div>
-         
-                 
+                
                     
                    <select th:field="*{categoria}" required="required">
-                         <option value=""> -- </option>
+                         <option value="">  </option>
                          <option th:each="c : ${listcategorias}"
                             th:value="${c.nombrecategoria}"
                             th:utext="${c.nombrecategoria}"/>
                   </select> 
+<!-- <ul> -->
+<!--         <li th:each="categ : ${listcategorias}"><input type="checkbox" -->
+<!--                 th:field="*{categoria}"   -->
+<!--                      th:value="${categ.idcategoria}"  /> <label  -->
+<!--                 th:text="${categ.nombrecategoria}">Categoria</label></li> -->
+<!-- </ul> -->
                     
               </div> 
                     

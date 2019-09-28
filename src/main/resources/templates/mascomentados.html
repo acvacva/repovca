@@ -1,109 +1,90 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-   <head>
-      <meta charset="UTF-8" />
-      <title>Add Person</title>
-      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-      <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet"/> 
-   </head>
-   <body>
-   
-   <!-- cabeza --> 
-   
-   <header>
+
+  
     <div th:replace="fragmheader :: header" ></div>
    
-   </header>
+
    
-   
+   <body>
    
   <!-- Barra de navegacion -->
        
-      <nav>
-      
-     
-      
-        <ul>
-      
-           <a title="Inicio" href="/comentarios"><li class="botones">Inicio</li></a>
-           <a title="Ver Productos" href="/products"> <li class="botones">Ver Productos</li></a>
-           <a title="Más Comentados" href="/mascomentados"><li class="botones">Más Comentados</li></a>
-           <a title="Mejor valorados" href="/masvalorado"> <li class="botones">Mejor valorados</li></a>
-           <a title="Añadir producto" href="/product/new"><li class="botones">Añadir producto</li></a>
-    
-       </ul>
-     
-       
-      </nav>
+   <div th:replace="fragmheader :: nav" ></div>
       
       
-      <!-- caja principal top -->
-      
-      <div id="top">
-           <ul>
            
-           <li>
-           <h1></h1>
-           <p></p>
-           </li>
-           
-           <li> 
-            <h1></h1>
-           <p></p>
-           </li>
-           
-           
-           <li>
-            <h1></h1>
-           <p></p>
-            </li>
-      
-            
-           </ul>
-            
-      </div>
-      
-      
-      <!-- seccion -->
-      
-     <section>
+    <div class="container-fluid">
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2>M�s comentados</h2>
+   <h6> <span th:if="${#httpServletRequest.remoteUser}"
+		th:text="${#httpServletRequest.remoteUser}"></span></h6>
+
+
+  </div>
+</div>
      
-     <aside id="izq"></aside>
-     
-     <article>
-     
-     <h1>Más Comentado</h1> 
-     
-     <div>
-         <table class="tablaestilo">
-            <tr>
+<!--      <div> -->
+         
+<!--             <tr> -->
                
-               <th>Producto</th>
-               <th>Veces comentado</th>
+<!--                <th>Producto</th> -->
+<!--                <th>Veces comentado</th> -->
               
-            </tr>
-            <tr th:each ="coments : ${coments}">
+<!--             </tr> -->
+<!--             <tr th:each ="coments : ${coments}"> -->
         
-                  <td th:utext="${coments[0]}">...</td>
-                       <td th:utext="${coments[1]}">...</td> 
+<!--                   <td th:utext="${coments[0]}">...</td> -->
+<!--                        <td th:utext="${coments[1]}">...</td>  -->
                  
   <!--   <td th:utext="${coments.nombrepro}">...</td>
      <td th:utext="${coments.vecescomentado}">...</td></td> -->
      
      
-            </tr>
-         </table>
-      </div>
+<!--             </tr> -->
+         
+<!--       </div> -->
      
-     
-     </article>
-     <aside id="der">
-     
-     
-     </aside>
-     
-     
-     </section> 
+<!-- </div> -->
+
+
+
+			
+		<div class="container mt-3">
+  <h2>M�s Comentados</h2>
+  <p>Veces que se ha comentado cada producto:</p>
+ 
+ <div th:each="coments : ${coments}">
+ 
+  <ul class="list-group">
+   <li class="list-group-item d-flex justify-content-between align-items-center"
+    th:utext="${coments[0]}">
+    <span class="badge badge-primary badge-pill" th:utext="${coments[1]}"></span>
+  </li>
+    
+    
+<!--     <li class="list-group-item d-flex justify-content-between align-items-center" th:utext="${coments[0]}"> -->
+<!--     <span class="badge badge-primary badge-pill" th:utext="${coments[1]}"></span> -->
+<!--   </li> -->
+    
+    
+  
+  </ul>
+</div>	
+			
+			
+			
+			
+			
+			
+
+		</div>
+
+
+
+
       
     <footer>
     
@@ -111,12 +92,8 @@
     
     </footer> 
    
-      
-   
      
-        
-          
       
-       
+    </div>   
    </body>
 </html>

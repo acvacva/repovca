@@ -25,7 +25,18 @@
 <!-- 					value="Desconecta" /> -->
 <!-- 			</form> -->
 
+	<!--  Conectado: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b>-->
+	
+
+
+  <form class="form-inline" th:action="@{/logout}" method="post">
+
+  <button type="submit" class="btn btn-primary">Salir</button>
+</form> 
+
 		</nav>
+		
+		
 	</div>
 
 </body>
